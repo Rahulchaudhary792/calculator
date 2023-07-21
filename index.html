@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset = "UTF-8">
+       <meta name = "Description" content = "A Calculator is an electronic hardware device or software capable of performing mathematical calculations, such as addition, multiplication, subtraction, or division.">
+       <meta name = "Author" content = "Id, Phonenumber">
+       <meta name = "Keywords" content = "Addition, Subtraction, Multiplication, Division, Log, Ln, modulus, Square Root">
+       <meta name = "Viewport" content = "width=device-width, initial-scale=1.0">
+       <title>Calculator</title>
+       <style>
+          .header {
+            color: white;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .button-style {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            background-color: rgb(211, 199, 199);
+            padding: 10px 3px;
+            border: none;
+            border-radius: 3px;
+            font-size: 20px;
+          }
+          .grr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            row-gap: 20px;
+            column-gap: 10px;
+            margin-top: 50px;
+          }
+          .js-result {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;  
+            position: relative;
+            top: 35px;     
+          }
+          body {
+            background-color: black;
+            overflow: hidden;
+          }
+          .div1 {
+            width: 320px;
+            height: 80px;
+            border: 3px solid white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+          }
+          .div2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 520px;
+          }
+          .div3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 670px;
+          }
+          .div4 {
+            width: 345px;
+            height: 575px;
+            border: 3px solid white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+          }
+          .div5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          @media (min-width: 0px) and (max-width: 300px) {
+            .header {
+            color: white;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            left: 15px;
+          }
+          .js-result {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;  
+            position: relative;
+            top: 35px;   
+            left: 15px;  
+          }
+            .button-style {
+                padding: 5px 1px;
+                font-size: 14px;
+            }
+            .grr {
+                column-gap: 5px;
+                width: 295px;
+            }
+            .div1 {
+            width: 340px;
+            height: 80px;
+            border: 3px solid white;
+            margin-bottom: 30px;
+            position: relative;
+            left: 15px;
+          }
+          .div2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 405px;
+          }
+          .div3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 540px;
+          }
+          .div4 {
+            width: 400px;
+            height: 500px;
+            border: 3px solid transparent;
+            margin-bottom: 30px;
+          }
+          }
+       </style>
+    </head>
+    <body>
+        <h1 class = "header">CALCULATOR</h1>
+        <div class = "div5">
+            <h1 class = "js-result">0</h1>
+        </div>
+        <div class = "grr">
+            <button class = "button-style" onclick = "but1()">1</button>
+             <button class = "button-style" onclick = "but2()">2</button>
+             <button class = "button-style" onclick = "but3()">3</button>
+             <button class = "button-style" onclick = "but4()">4</button>
+             <button class = "button-style" onclick = "but5()">5</button>
+             <button class = "button-style" onclick = "but6()">6</button>
+             <button class = "button-style" onclick = "but7()">7</button>
+             <button class = "button-style" onclick = "but8()">8</button>
+             <button class = "button-style" onclick = "but9()">9</button>
+             <button class = "button-style" onclick = "but10()">0</button>
+             <button class = "button-style" onclick = "but11()">.</button>
+             <button class = "button-style" onclick = "but12()">+</button>
+             <button class = "button-style" onclick = "but13()">-</button>
+             <button class = "button-style" onclick = "but14()">x</button>
+             <button class = "button-style" onclick = "but15()">/</button>
+             <button class = "button-style" onclick = "but16()">%</button>
+             <button class = "button-style" onclick = "but17()">Sqrt</button>
+             <button class = "button-style" onclick = "but18()">Log</button>
+             <button class = "button-style" onclick = "but19()">Ln</button>
+             <button class = "button-style" onclick = "but20()">=</button>
+             <button class = "button-style" onclick = "but21()">Reset</button>
+            </div>
+            <div class = "div2">
+                <div class = "div1">
+                    
+                </div>
+            </div>
+            <!--<div class = "div3">
+                <div class = "div4">
+                    
+                </div>
+            </div>-->
+            <script>
+                let calculation = ' ';
+           let result = document.querySelector('.js-result');
+           function but1() {
+             calculation += '1';
+             result.innerHTML = `${calculation}`;
+           }
+           function but2() {
+             calculation += '2';
+             result.innerHTML = `${calculation}`;
+           }
+           function but3() {
+             calculation += '3';
+             result.innerHTML = `${calculation}`;
+           }
+           function but4() {
+             calculation += '4';
+             result.innerHTML = `${calculation}`;
+           }
+           function but5() {
+             calculation += '5';
+             result.innerHTML = `${calculation}`;
+           }
+           function but6() {
+             calculation += '6';
+             result.innerHTML = `${calculation}`;
+           }
+           function but7() {
+             calculation += '7';
+             result.innerHTML = `${calculation}`;
+           }
+           function but8() {
+             calculation += '8';
+             result.innerHTML = `${calculation}`;
+           }
+           function but9() {
+             calculation += '9';
+             result.innerHTML = `${calculation}`;
+           }
+           function but10() {
+             calculation += '0';
+             result.innerHTML = `${calculation}`;
+           }
+           function but11() {
+             calculation += '.';
+             result.innerHTML = `${calculation}`;
+           }
+           function but12() {
+             calculation += '+';
+             result.innerHTML = `${calculation}`;
+           }
+           function but13() {
+             calculation += '-';
+             result.innerHTML = `${calculation}`;
+           }
+           function but14() {
+             calculation += '*';
+             result.innerHTML = `${calculation}`;
+           }
+           function but15() {
+             calculation += '/';
+             result.innerHTML = `${calculation}`;
+           }
+           function but16() {
+             calculation += '%';
+             result.innerHTML = `${calculation}`;
+           }
+           function but17() {
+             calculation1 = eval(calculation);
+             calculation2 = Math.sqrt(calculation1);
+             result.innerHTML = `${calculation2}`;
+           }
+           function but18() {
+             calculation1 = eval(calculation);
+             calculation2 = Math.log10(calculation1);
+             result.innerHTML = `${calculation2}`;
+           }
+           function but19() {
+             calculation1 = eval(calculation);
+             calculation2 = Math.log1p(calculation1);
+             result.innerHTML = `${calculation2}`;
+           }
+           function but20() {
+             calculation1 = eval(calculation);
+             result.innerHTML = `${calculation1}`;           
+           }
+           function but21() {
+             calculation = '';
+             result.innerHTML = `${calculation}`;
+           }
+       </script>
+    </body>
+</html>
